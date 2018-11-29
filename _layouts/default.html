@@ -10,7 +10,11 @@
     {% seo %}
 </head>
 <body>
+    
     {% include navigation.html %}
-    {{ content }}
+    {% include jumbotron.html %}
+    <div class="container">
+        {{ content }}
+    </div>
 </body>
 </html>
