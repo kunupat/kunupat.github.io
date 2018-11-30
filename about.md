@@ -1,6 +1,6 @@
 ---
+layout: about
 title: Kunal Patil- About
 ---
-# About page
 
-This page tells you a little bit about me.
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, optio officia veritatis ea 
