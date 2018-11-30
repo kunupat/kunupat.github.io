@@ -1,27 +1,19 @@
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Kunal Patil</a>
-    </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><img src="/assets/images/KP.svg" alt="Kunal Patil" style="height: 2em; width: 2em; border-radius: 10%"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
         {% for item in site.data.navigation %}
-          <li><a href="{{ item.link }}" {% if page.url == item.link %}class="active"{% endif %}>{{ item.name }}</a></li>
+        <li class="nav-item"><a  class="nav-link" href="{{ item.link }}">
+          {{ item.name }}</a></li>
         {% endfor %}
       </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="https://github.com/kunupat" target="_blank">Github</a></li>
-        <li><a href="https://www.linkedin.com/in/kunal-patil-89769715/" target="_blank">LinkedIn</a></li>
+      <ul class="navbar-nav">
+          <li class="nav-item"><a href="https://github.com/kunupat" target="_blank" class="nav-link">Github</a></li>
+          <li class="nav-item"><a href="https://www.linkedin.com/in/kunal-patil-89769715/" target="_blank" class="nav-link">LinkedIn</a></li>
       </ul>
     </div>
-  </div>
-</nav>
+  </nav>
