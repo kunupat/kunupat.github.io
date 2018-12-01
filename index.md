@@ -2,7 +2,7 @@
 title: Digital Learning Paths
 ---
 
-The internet has a lot of information and it is ever growing rapidly with speeds like never before. Techonologies are also changing at fast pace in order to cater to different requirements, use cases & devices. Internet has been our go-to place for every information need due.
+The internet has a lot of information and it is ever growing rapidly with speeds like never before. Techonologies are also changing at fast pace in order to cater to different requirements, use cases & devices. Internet has been our go-to place for every information need.
 
 Often our search for answers begins with a query that results in tons of free articles, tutorials, videos, as well as paid content. As a seeker, manytimes we are drowned in the information overflow.
 
