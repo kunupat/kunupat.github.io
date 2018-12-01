@@ -1,5 +1,5 @@
 ---
-title: Kunal Patil- Home
+title: Digital Learning Paths
 ---
 
 # Home
