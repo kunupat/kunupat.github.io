@@ -49,6 +49,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      author: "Kunal Patil"
   - scope:
       path: ""
     values:
