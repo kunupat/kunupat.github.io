@@ -4,7 +4,9 @@ title: Kunal Patil- About
 ---
 
 **Name** Kunal Patil
+
 **Experience** 11+ years
+
 **Skils**
 - *Languages:* Java, NodeJS, Python, HTML5, CSS3, JS, NodeJS
 - *Frameworks:* Spring, JSF, AngularJS, Angular 6, Bootstrap 4, Jekyll
