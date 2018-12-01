@@ -16,7 +16,7 @@
 title: Digital Learning Paths
 email: kunal.m.patil@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  This site provides a structured learning path by consolidating the best learning materials in various formats including articles, videos, tutorials, etc. for a given technology. This site consolidates best free content on the internet and provides learners a structured way of learning. The posts should serve as step by step guide to learn latest technoolgies.
+  This site provides structured learning paths by consolidating the best learning materials in various formats including articles, videos, tutorials, etc. for a given technology. This site consolidates best free content on the internet and provides learners with a structured, step-by-step way of learning.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://kunupat.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kunupat
