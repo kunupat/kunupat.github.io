@@ -3,8 +3,6 @@ layout: about
 title: Kunal Patil- About
 ---
 
-## About Me
-
 **Name** Kunal Patil
 **Experience** 11+ years
 **Skils**
