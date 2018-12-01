@@ -3,8 +3,12 @@
   margin-bottom: 0px;
 }
 
-.jumbotron{
+#jumbotron{
   text-align: center;
+  background-image: url("/assets/images/abstract-access-close-up-1089438\ \(1\).jpg");
+  background-size: cover;
+  color: white;
+  border-radius:0%;
 }
 
 .fa:hover {
@@ -19,4 +23,9 @@
 .fa-linkedin {
   font-size: 3em;
   color: #007bb5;
+}
+
+.fa-twitter-square {
+  font-size: 3em;
+  color: #38A1F3;
 }
