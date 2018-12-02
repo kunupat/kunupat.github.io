@@ -7,7 +7,7 @@ title: Kunal Patil- About
 
 **Experience** 11+ years
 
-**Skils**
+**Skills**
 - *Languages:* Java, NodeJS, Python, HTML5, CSS3, JS, NodeJS
 - *Frameworks:* Spring, JSF, AngularJS, Angular 6, Bootstrap 4, Jekyll
 - *Databases:* Oracle, DB2, MongoDB
