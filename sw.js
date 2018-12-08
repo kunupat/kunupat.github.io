@@ -19,6 +19,10 @@ if (workbox) {
   );
 
   workbox.routing.registerRoute(
+    new RegExp('/'),
+    workbox.strategies.networkFirst()
+  );
+  workbox.routing.registerRoute(
     // Cache CSS files
     /.*\.css/,
     // Use cache but update in the background ASAP
