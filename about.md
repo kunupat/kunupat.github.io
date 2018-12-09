@@ -1,6 +1,6 @@
 ---
 layout: about
-title: Kunal Patil- About
+title: Kunal Patil- About Me
 ---
 
 **Name** Kunal Patil
