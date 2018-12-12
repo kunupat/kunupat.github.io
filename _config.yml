@@ -54,3 +54,6 @@ defaults:
       path: ""
     values:
       layout: "default"
+      
+# Google Analytics 
+google_analytics: UA-130857540-1
