@@ -29,4 +29,4 @@ https://www.udemy.com/aws-certified-solutions-architect-associate/learn/v4/t/lec
 - AWS Use Cases: https://aws.amazon.com/getting-started/use-cases/
 
 ## My Notes
-Refer my notes from here: https://github.com/kunupat/aws-solution-architect-associate-certification-notes
+Refer my notes from here: https://kunupat.github.io/aws-solution-architect-associate-certification-notes/
