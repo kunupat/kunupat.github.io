@@ -28,5 +28,8 @@ https://www.udemy.com/aws-certified-solutions-architect-associate/learn/v4/t/lec
 - AWS Well Architected: https://aws.amazon.com/architecture/well-architected/
 - AWS Use Cases: https://aws.amazon.com/getting-started/use-cases/
 
+## Register For Exam
+- https://www.certmetrics.com/amazon/
+
 ## My Notes
 Refer <a href="https://kunupat.github.io/aws-solution-architect-associate-certification-notes/" target="_blank"> my AWS Solutions Architect Associate Certification February 2018 Notes </a> 
