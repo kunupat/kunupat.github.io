@@ -21,6 +21,7 @@ https://www.udemy.com/aws-certified-solutions-architect-associate/learn/v4/t/lec
 - https://aws.amazon.com/getting-started/?nc2=h_ql_le
 - **Free** training material provided by AWS can be found on: https://www.aws.training. You will have to register for it using your peronsal Amazon account or APN account and then enroll for courses listed under **Learning Library** tab. Following is a list of courses for AWS Solution Architect February 2018 Associate Level Certification Exam:
     * Deep Dive into Amazon Simple Storage Service (Amazon S3)
+    * AWS Cloud Practitioner Essentials (Second Edition)
 
 ## Learn AWS Architectures
 - AWS Reference Architecture: https://aws.amazon.com/architecture/
