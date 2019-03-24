@@ -1,9 +1,9 @@
 ---
-title:  "AWS Solution Architect February 2018 Associate Level Certification Exam Notes"
+title:  "AWS Solution Architect- Associate Certification Preparation"
 date:   2019-01-16
 ---
 
-AWS Solution Architect February 2018 Associate Level Certification Exam Notes
+AWS Solution Architect (February 2018) Associate Level Certification Exam Preparation
 
 ## Exam Guide and Preparation- Overview
 1. About the exam: https://aws.amazon.com/certification/certified-solutions-architect-associate/
