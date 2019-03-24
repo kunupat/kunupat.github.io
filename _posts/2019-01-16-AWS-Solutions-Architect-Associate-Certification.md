@@ -39,7 +39,7 @@ I found the <a href="https://www.udemy.com/aws-certified-solutions-architect-ass
 
 ## Learn AWS Architectures
 - Please check and understand AWS reference architectures and use cases. This will help in answering scenario-based questions. I have listed down the following links for this purpose:
-   - https://aws.amazon.com/architecture/" target="_blank">AWS Reference Architecture</a>
+   - <a href="https://aws.amazon.com/architecture/" target="_blank">AWS Reference Architecture</a>
    - <a href="https://aws.amazon.com/this-is-my-architecture/" target="_blank">This is my architecture</a>
    - <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">AWS Well Architected</a>
    - <a href="https://aws.amazon.com/getting-started/use-cases/" target="_blank">AWS Use Cases</a>
