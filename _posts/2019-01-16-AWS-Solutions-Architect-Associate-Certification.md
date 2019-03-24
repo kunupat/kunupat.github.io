@@ -15,9 +15,9 @@ Refer <a href="https://kunupat.github.io/aws-solution-architect-associate-certif
 4.	<a href="https://www.aws.training/Account/Transcript/Current" target="_blank">AWS Online Training</a>
 
 ## Read AWS White Papers
-- https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf
-- https://d1.awsstatic.com/whitepapers/Storage/AWS%20Storage%20Services%20Whitepaper-v9.pdf
-- All AWS whitepapers can be found here- https://aws.amazon.com/whitepapers/
+- <a href="https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf" target="_blank">AWS Cloud Best Practices</a>
+- <a href="https://d1.awsstatic.com/whitepapers/Storage/AWS%20Storage%20Services%20Whitepaper-v9.pdf" target="_blank">Storage Services Whitepaper</a>
+- <a href="https://aws.amazon.com/whitepapers/" target="_blank">All AWS Whitepapers</a>
 
 ## Read AWS FAQs
 - <a href="https://aws.amazon.com/ec2/faqs/" target="_blank">EC2 FAQs</a>
