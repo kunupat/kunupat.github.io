@@ -5,11 +5,14 @@ date:   2019-01-16
 
 AWS Solution Architect (February 2018) Associate Level Certification Exam Preparation
 
+## My Notes
+Refer <a href="https://kunupat.github.io/aws-solution-architect-associate-certification-notes/" target="_blank"> my AWS Solutions Architect Associate Certification February 2018 Notes </a> 
+
 ## Exam Guide and Preparation- Overview
-1. About the exam: https://aws.amazon.com/certification/certified-solutions-architect-associate/
-2.	https://aws.amazon.com/certification/certification-prep/
-3.  https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate_Feb_2018_%20Exam_Guide_v1.5.2.pdf
-4.	https://www.aws.training/Account/Transcript/Current
+1. <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank">About the exam</a>
+2.	<a href="https://aws.amazon.com/certification/certification-prep/" target="_blank">Preperation</a>
+3. <a href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate_Feb_2018_%20Exam_Guide_v1.5.2.pdf" target="_blank">Exam Guide</a>
+4.	<a href="https://www.aws.training/Account/Transcript/Current" target="_blank">AWS Online Training</a>
 
 ## Read AWS White Papers
 - https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf
@@ -17,34 +20,32 @@ AWS Solution Architect (February 2018) Associate Level Certification Exam Prepar
 - All AWS whitepapers can be found here- https://aws.amazon.com/whitepapers/
 
 ## Read AWS FAQs
-- https://aws.amazon.com/ec2/faqs/
-- https://aws.amazon.com/s3/faqs/
-- https://aws.amazon.com/vpc/faqs/
-- https://aws.amazon.com/route53/faqs/
-- https://aws.amazon.com/rds/faqs/
-- https://aws.amazon.com/sqs/faqs/
-- All AWS FAQs can be found here- https://aws.amazon.com/faqs/
+- <a href="https://aws.amazon.com/ec2/faqs/" target="_blank">EC2 FAQs</a>
+- <a href="https://aws.amazon.com/s3/faqs/" target="_blank">S3 FAQs</a>
+- <a href="https://aws.amazon.com/vpc/faqs/" target="_blank">VPC FAQs</a>
+- <a href="https://aws.amazon.com/route53/faqs/" target="_blank">Route53 FAQs</a>
+- <a href="https://aws.amazon.com/rds/faqs/" target="_blank">RDS FAQs</a>
+- <a href="https://aws.amazon.com/sqs/faqs/" target="_blank">SQS FAQs</a>
+- <a href="https://aws.amazon.com/faqs/" target="_blank">All AWS FAQs</a>
 
-## Udemy Course (This is not free)
-https://www.udemy.com/aws-certified-solutions-architect-associate/learn/v4/t/lecture/4266378?start=0
+## Udemy Course (Paid Online Course)
+I found the <a href="https://www.udemy.com/aws-certified-solutions-architect-associate/learn/v4/t/lecture/4266378?start=0" target="_blank">A Cloud Guru course</a> really good for covering almost all topics of the exam. 
 
 ## Learning resources from AWS
-- https://aws.amazon.com/getting-started/?nc2=h_ql_le
-- **Free** training material provided by AWS can be found on: https://www.aws.training. You will have to register for it using your peronsal Amazon account or APN account and then enroll for courses listed under **Learning Library** tab. Following is a list of courses for AWS Solution Architect February 2018 Associate Level Certification Exam:
+- <a href="https://aws.amazon.com/getting-started/?nc2=h_ql_le" target="_blank">AWS Getting Started</a> guide
+- **Free** training material provided by AWS can be found on: <a href="https://www.aws.training" target="_blank">https://www.aws.training</a>. You will have to register for it using your personal Amazon account or APN account and then enroll for courses listed under **Learning Library** tab. Following is a list of courses for AWS Solution Architect February 2018 Associate Level Certification Exam:
     * Deep Dive into Amazon Simple Storage Service (Amazon S3)
     * AWS Cloud Practitioner Essentials (Second Edition)
 
 ## Learn AWS Architectures
-- AWS Reference Architecture: https://aws.amazon.com/architecture/
-- This is my architecture: https://aws.amazon.com/this-is-my-architecture/
-- AWS Well Architected: https://aws.amazon.com/architecture/well-architected/
-- AWS Use Cases: https://aws.amazon.com/getting-started/use-cases/
+- Please check and understand AWS reference architectures and use cases. This will help in answering scenario-based questions. I have listed down the following links for this purpose:
+   - https://aws.amazon.com/architecture/" target="_blank">AWS Reference Architecture</a>
+   - <a href="https://aws.amazon.com/this-is-my-architecture/" target="_blank">This is my architecture</a>
+   - <a href="https://aws.amazon.com/architecture/well-architected/" target="_blank">AWS Well Architected</a>
+   - <a href="https://aws.amazon.com/getting-started/use-cases/" target="_blank">AWS Use Cases</a>
 
 ## Sample Questions
-- https://d1.awsstatic.com/training-and-certification/docs/AWS_Certified_Solutions_Architect_Associate_Sample_Questions.pdf
+- <a href="https://d1.awsstatic.com/training-and-certification/docs/AWS_Certified_Solutions_Architect_Associate_Sample_Questions.pdf" target="_blank">AWS Certified Solutions Architect Associate Sample Questions</a>
 
 ## Register For Exam
-- https://www.certmetrics.com/amazon/
-
-## My Notes
-Refer <a href="https://kunupat.github.io/aws-solution-architect-associate-certification-notes/" target="_blank"> my AWS Solutions Architect Associate Certification February 2018 Notes </a> 
+- <a href="https://www.certmetrics.com/amazon/" target="_blank">Register For Exam</a>
