@@ -2,7 +2,7 @@
 title:  "My Exam Notes AWS Solution Architect Associate Certification"
 date:   2019-03-24
 ---
-AWS Solutions Architect February 2018 Associate Level Certification Exam Notes
+AWS Solutions Architect February 2018 Associate Level Certification Exam Notes.
 
 Go to the [blog post](https://kunupat.github.io/2019/01/16/AWS-Solutions-Architect-Associate-Certification.html) for a listing of material and useful links to pass AWS Solutions Architect February 2018 Associate Level Certification exam.
 
@@ -73,10 +73,10 @@ Sample IAM policy for allowing PUT object action on Amazon S3 bucket:
 - S3 Bucket Format: `https://s3-<aws_region>.amazonaws.com/<bucket-name>`
 
 ### S3 Usage Patterns (When to use S3)
-1. Store and distribute static web content and media
-2. Host entire static web sites
+1. Store and distribute static web content and media (directly deliver static content from S3 or act as content store for AWS CloudFront CDN)
+2. Host entire static web sites 
 3. Data store for computation and large scale analytics
-4. Use as a highly durable, scalable, and secure solution for backup and archiving of critical data
+4. Use as a highly durable, scalable, and secure solution for backup and archiving of critical data (using Glacier and Cross-region replication)
 
 ### When NOT to use S3:
 1. As a file system
@@ -89,18 +89,27 @@ Sample IAM policy for allowing PUT object action on Amazon S3 bucket:
     - Use Amazon Glacier
 5. Dynamic Website Hosting
     - Use EC2 or EFS
-  
+
+### Performance
+- Accessing S3 from EC2 which is in same Region, the access to S3 is designed to be fast
+- S3 is much faster in case of concurrent access from multiple apps, threads and clients compared to a single server
+- Muti-part upload is faster choice for object > 100MB
+- Combine usage with RDS, DynamoDB, etc. These databases will store meta-data only while actual data resides in S3
+- Transfer Acceleration: Uses CloudFront Edge locations.  Enable Amazon S3 Transfer Acceleration on an Amazon S3 bucket. Then modify your Amazon S3 PUT and GET requests to use the s3-accelerate endpoint domain name (`<bucketname>.s3-accelerate.amazonaws.com`)
+
 ### S3 Cost Model
 Amazon S3 Standard has three pricing components: 
-* storage (per GB per month) 
-* data transfer in or out (per GB per month)
-* requests (per thousand requests per month)
+- storage (per GB per month) 
+- data transfer in or out (per GB per month)
+- requests (per thousand requests per month)
+- There are Data Transfer IN and OUT fees if you enable Amazon S3 Transfer Acceleration on a bucket and the transfer performance is
+faster than regular Amazon S3 transfer. If AWS determines that Transfer Acceleration is not faster than normal transfer, it will not use Transfer Acceleration for upload, and will not charge for Transfer Acceleration
 
 ### S3 Storage Classes
-1. **S3 Standard:** 99.99% availability, 99.999999999% durability, can sustain loss of 2 AZs concurrently
-2. **S3 Infrequently Accessed (S3-IA):** For data less frequently accessed, but needs faster retrieval when required. Charged for retrieval fee.
-3. **S3 Infrequently Accessed One Zone (S3 One zone-IA):** S3-IA with no redundancy as it spans in only one AZ.
-4. **Glacier:** For data archival. Typical retrieval time will be 3-5 hours.
+1. **S3 Standard:** 99.999999999% durability(11 nines), 99.99% availability (4 nines), can sustain loss of 2 AZs concurrently
+2. **S3 Infrequently Accessed (S3-IA):** For data less frequently accessed, but needs faster retrieval when required. Charged for retrieval fee
+3. **S3 Infrequently Accessed One Zone (S3 One zone-IA):** S3-IA with no redundancy as it spans in only one AZ
+4. **Glacier:** For data archival. Typical retrieval time will be 3-5 hours
 5. ~~**Reduced Redundancy Storage (S3 RRS)~~(Deprecated. Use S3 One zone- IA instead):** Reduced Redundancy Storage (RRS) is an Amazon S3 storage option that enables customers to store noncritical, reproducible data at lower levels of redundancy than Amazon S3’s standard storage. Designed to provide 99.99% durability and 99.99% availability of objects over a given year. Designed to sustain the loss of data in a single facility.
 
 ### S3 Data Consistency Model
@@ -124,6 +133,7 @@ Max file size that can be uploaded to S3 from AWS console is **78 GB**
   - AWS Snowball Edge
   - AWS Snowmobile
   - Third Party Connectors
+> Note that when using Amazon Glacier as a storage class in Amazon S3 you use the Amazon S3 API, and when using “native” Amazon Glacier you use the Amazon Glacier API. For example, objects archived to Amazon Glacier using Amazon S3 lifecycle policies can only be listed and retrieved by using the Amazon S3 API or the Amazon S3 console. You can’t see them as archives in an Amazon Glacier vault.
 
 ### Data Access: REST APIs to access buckets and objects
   - **Path-style URL:** E.g `http://s3-eu-west-1.amazonaws.com/mybucket/image01.jpg`
@@ -132,11 +142,10 @@ Max file size that can be uploaded to S3 from AWS console is **78 GB**
   - **Virtual-hosted-style URL:** These are more user friendly as they starts with bucket name E.g. `http://mybucket.s3.amazonaws.com/image01.jpg`
   
   **Using custom domain names to access S3 bucket:**
-  - **HTTP-based URL:** Match bucket name to DNS registry name. E.g. `http://www.example.com/device.html` 
+  - **HTTP-based URL:** Must match bucket name to DNS registry name. E.g. `http://www.example.com/device.html` 
   - **HTTPS-based URL:** DON'T use *periods* in bucket name as it will NOT work with SSL due to SSL certificate exceptions. To avoid this issue- Write your own SSL certificate verification rule **OR** use HTTP-based virtual-hosted-URLs **OR** use path-style URLs **OR** use  `Amazon CloudFront` in conjunction with S3.
 
 > S3 uses DNS for routing requests.
-
 
 ### Handling Routing errors:
 > If a request to S3 is incorrectly routed to incorrect AWS region, S3 sends temporary redirect. **Ensure to implement retry logic in you requester application for redirect response codes**.
@@ -170,8 +179,8 @@ These are used to provide access(PUT/GET) to users/applications who do not have 
 CORS can be configured using a XML config file that can contain 100 CORS rules.Use AWS SDK to apply CORS configuration to S3 bucket. CORS configration is used to allow access to S3 objects from an application hosted in different domain.
 
 ### S3 Bucket Access
-#### Bucket Policies
 
+#### Bucket Policies
 > Control who can access this bucket.
 - Use to make entire bucket public
 - Bucket Policies are similar to IAM policy but are applied to AWS resources (S3 in this case). Hence it will also have *principal* defined in the policy as opposed to IAM policies. 
