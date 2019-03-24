@@ -9,6 +9,7 @@ title: Blog
   {% for post in site.posts %}
     <li role="presentation">
       <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <p><h4>{{ page.date }}</h4></p>
       <p>{{ post.excerpt }}</p>
     </li>
   {% endfor %}
