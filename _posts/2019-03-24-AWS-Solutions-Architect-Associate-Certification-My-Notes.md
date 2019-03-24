@@ -910,6 +910,9 @@ You can launch or start instances in a placement group (to achieve high throughp
 - ECR is AWS's container registry controlled with IAM access control
 
 ## Elastic Beanstalk
+- AWS Elastic Beanstalk is an orchestration service offered from Amazon Web Services for deploying infrastructure which orchestrates various AWS services, including EC2, S3, Simple Notification Service, CloudWatch, autoscaling, and Elastic Load Balancers. 
+- No extra charges for Beanstalk
+- You can simply upload your code and Elastic Beanstalk automatically handles the deployment, from capacity provisioning, load balancing, auto-scaling to application health monitoring. At the same time, you retain full control over the AWS resources powering your application and can access the underlying resources at any time.
 
 ## AWS Well Architected
 - Set of questions to ask if your architecture meets the requirements of well architected framework
