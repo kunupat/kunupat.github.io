@@ -6,7 +6,7 @@ date:   2019-01-16
 AWS Solution Architect (February 2018) Associate Level Certification Exam Preparation
 
 ## My Notes
-Refer <a href="https://kunupat.github.io/aws-solution-architect-associate-certification-notes/" target="_blank"> my AWS Solutions Architect Associate Certification February 2018 Notes </a> 
+Refer <a href="https://kunupat.github.io/2019/03/24/AWS-Solutions-Architect-Associate-Certification-My-Notes.html" target="_blank"> my AWS Solutions Architect Associate Certification February 2018 Notes </a> 
 
 ## Exam Guide and Preparation- Overview
 1. <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank">About the exam</a>
