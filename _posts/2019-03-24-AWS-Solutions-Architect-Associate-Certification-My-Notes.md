@@ -413,19 +413,22 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
 
 ## Snowball
 ### Snowball
-  - Petabyte scale data transport hardware appliance to move data in/out from AWS
-  - 80TB snowball in all regions and 50TB snowballs in US regions
-  - tamper resistant, AES-256 encrypted, full chain of custody
-  - Two ways to transfer data to Snowball from your own-premises:
-    - Using Snowball client
-    - Using Amazon S3 Adapter for Snowball
-    - Both of these tools can be dowloaded from <a href="https://aws.amazon.com/importexport/tools/" target="_blank">this link</>
+- Petabyte scale data transport hardware appliance to move data in/out from AWS
+- 80TB snowball in all regions and 50TB snowballs in US regions
+- tamper resistant, AES-256 encrypted, full chain of custody
+- Two ways to transfer data to Snowball from your own-premises:
+  - Using Snowball client
+  - Using Amazon S3 Adapter for Snowball
+  - Both of these tools can be dowloaded from <a href="https://aws.amazon.com/importexport/tools/" target="_blank">this link</a>
+- Import and export to/from S3
+- Cost: Service Fee (per job), Extra day charges as required (the first 10 days of onsite usage are free) and data transfer
+
 ### Snowball Edge
   - Snowball like but with 100TB data transfer and on-board storage and compute capability
   - Like small AWS data-center
-### Snowmobile
+
+### SnowMobile
   - A shipping container on a truck for 100 Peta Bytes scale data transport for hexabyte-scale data tranfer
-- Import and export to/from S3
 
 ## Elastic Compute Cloud
 - Elastic Compute Cloud (EC2) provides 4 Pricing Options:
