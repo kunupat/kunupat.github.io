@@ -412,14 +412,18 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
     - Cost-effective durable solution for archiving data in AWS
 
 ## Snowball
-- **Snowball**
+### Snowball
   - Petabyte scale data transport hardware appliance to move data in/out from AWS
   - 80TB snowball in all regions and 50TB snowballs in US regions
   - tamper resistant, AES-256 encrypted, full chain of custody
-- **Snowball Edge**
+  - Two ways to transfer data to Snowball from your own-premises:
+    - Using Snowball client
+    - Using Amazon S3 Adapter for Snowball
+    - Both of these tools can be dowloaded from <a href="https://aws.amazon.com/importexport/tools/" target="_blank">this link</>
+### Snowball Edge
   - Snowball like but with 100TB data transfer and on-board storage and compute capability
   - Like small AWS data-center
-- **Snowmobile**
+### Snowmobile
   - A shipping container on a truck for 100 Peta Bytes scale data transport for hexabyte-scale data tranfer
 - Import and export to/from S3
 
