@@ -447,8 +447,21 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
 - Instance store volumes are ephemeral. That is they are deleted when the associated instance is terminated or there is a failure in the underlying host. Instance store volumes cannot be stopped
 - EBS backed instances can be stopped. That is, you will not loose data on this instance if it is stopped.
 - You can reboot both volume types without loosing the data on reboot
-- By degfault, both ROOT volumes will be deleted on termination. However, with EBS volumes, you can tell AWS to keep the root device volume
-- When you launch an instance, the root device volume contains the image used to boot the instance. When Amazon EC2 was introduced, all AMIs were backed by Amazon EC2 instance store, which means the root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3.
+- By default, both ROOT volumes will be deleted on termination. However, with EBS volumes, you can tell AWS to keep the root device volume
+- When you launch an instance, the root device volume contains the image used to boot the instance. When Amazon EC2 was introduced, all AMIs were backed by Amazon EC2 instance store, which means the root device for an instance launched from the AMI is an instance store volume created from a template stored in Amazon S3
+-Instance storage volumes are ideal for temporary storage of information that is continually changing, such as buffers, caches, scratch data, and other temporary content, or for data that is replicated across a fleet of instances, such as a load-balanced pool of web servers
+- EC2 Instance Types:
+  - **i2: High I/O (the i2 family)** type EC2 instances provide instance storage volumes backed by SSDs which are suited for high performance DBs like MongoDB, Cassandra, OLTP systems
+  - **d2: High Storage (the d2 family)** type EC2 instances support higher storage density which are ideally suited for applications that   benefit from high sequential I/O performance across very large datasets. Example applications include data warehouses, Hadoop/MapReduce storage nodes, and parallel file systems
+  - **r3:** type instances use direct-attached SSDs
+  - **hi1:** type instances use direct-attached SSDs
+  - Check all <a href="https://aws.amazon.com/ec2/instance-types/" target="_blank"> available EC2 instance types</a>
+
+| General Purpose | General Purpose | General Purpose | Compute Optimized | Memory Optimized | Memory Optimized | Memory Optimized | Memory Optimized | Accelerated  Computing | Accelerated  Computing | Accelerated Computing | Storage  Optimized | Storage  Optimized | Storage  Optimized |
+|-----------------|-----------------|-----------------|-------------------|------------------|------------------|------------------|------------------|------------------------|------------------------|-----------------------|--------------------|--------------------|--------------------|
+| A               | T               | M               | C                 | R                | X                | H (High Memory)  | Z                | P                      | G                      | F                     | H                  | I                  | D                  |
+| a1              | t3, t2          | m5, m5a, m4     | c5, c5n, c4       | r5, r5a, r4,     | x1e, x1,         | u-*tb1.metal     | z1d              | p3, p2                 | g3                     | f1                    | h1                 | i3                 | d2                 |
+
 - Get Instance Meta-data: CURL URL: `http://169.254.169.254/latest/meta-data/`
 - Get Instance User Data: CURL URL: `http://169.254.169.254/latest/user-data/`
 
@@ -471,22 +484,32 @@ You can launch or start instances in a placement group (to achieve high throughp
 - Think of Elastic Block Storage (EBS) as a virtual disk in AWS cloud. EBS is attached to an EC2 instance.
 - EBS volumes are persistent and can be detached and reattached to other EC2 instances
 - EBS volumes can be stopped without loosing data
+- Sizes vary from 1GB to 16TB; allocated in 1GB increments
+- Use **EBS-optimized instances** when you need to enable your EC2 instances to maximize the performance of EBS volumes, as EBS-optimized instances deliver dedicated throughput between Amazon EC2 and Amazon EBS, with speeds between 500 Mbps and 10,000 Mbps depending on the instance type
 - **EBS Volume Types:**
   - General Purpose SSD(GP2)
-    - Up to 10000 IOPs
+    - Volume Size: 1GB to 16TB
+    - Up to 10,000 IOPs
+    - Good choice for general purpose workloads- Boot volumes, low-latency interactive apps, dev & test
   - Provisioned IOPS SSD(IO1)
-    - More than 10000 IOPS upto 25000 IOPS per EBS volume
+    - Volume Size: 4GB to 16TB
+    - More than 10,000 IOPS upto 25,000 IOPS per EBS volume
+    - Good choice for NoSQL and relational databases
   - Throughput Optimized HDD(ST1)
     - Can't be a bootable volume
+    - Max 500 IOPS
+    - Volume Size: 500GB to 16TB
+    - Good choice for streaming workloads, big data, data warehouse, log processing, and ETL workloads
   - Magnetic:
     - Cold HDD (SC1)
       - Lowest Cost HDD volume. Good for less frequently accessed workloads
       - Can't be a bootable volume
       - Can be used as file server
+      - Volume Size: 500GB to 16TB
+      - Good choice for colder data requiring fewer scans per day
     - Magnetic (Standard): Previous Generation but still can be used.
       - Can be a boot volume
     - Throuhput Optimized HDD: Low cost HDD. Good for frequently accessed, throughput-intesive workloads
-    
 - There are many EC2 instance types otimized for specific kind of work loads (e.g. memory optimized, IO optimized, CPU optimized, etc.)
 - 1 EBS volume cannot be mounted to multiple EC2 instances.(use [EFS](#elastic-file-service) instead as an EFS mounted volume can be shared by multiple EC2 instances)
 - Snapshots are copies of EBS volumes taken at a given point of time. Volumes exist on EBS and snapshots exist on S3
@@ -494,6 +517,7 @@ You can launch or start instances in a placement group (to achieve high throughp
 - Snapshots of encrypted volumes are also encrypted automatically
 - Encrypted snapshots cannot be shared
 - The EC2 instance should be terminated before you can take snapshot of the EBS Root volumes attached to it
+- Note that some instance types, such as the micro instances (t1, t2) and the Compute-optimized c4 instances, use EBS storage only with no instance storage provided. Note also that instances using Amazon EBS for the root device (in other words that boot from Amazon EBS) don’t expose the instance store volumes by default. You can choose to expose the instance store volumes at instance launch time by specifying a block device mapping. 
 
 ## Elastic Load Balancer
 - Three types of Elastic Load Balancers(ELBs):
@@ -521,11 +545,15 @@ You can launch or start instances in a placement group (to achieve high throughp
 - If you want to point a domain name like `www.example.com` to an ELB(which itself can only be accessed using its DNS), you need to use Route53's Alias Record
 
 ## Elastic File Service
-- Supports NFS v4 protocol
+- EFS supports NFSv4 and NFSv4.1 protocols
 - Pay for the storage used (no pre-provisioning needed)
 - Scales upto petabytes
 - Supports thousands of concurrent NFS connections
 - Read-after-write consistency model
+- Two modes:
+  - General Purpose
+  - Max I/O- Go for this mode if more than 7000 file operations per second per file sytem. Also go for this if you have tens/hundreds/thousands of EC2 instances accessing file sytem concurrently
+  
 
 ## Lambda Functions
 - A compute service without managing any server, os, etc.
