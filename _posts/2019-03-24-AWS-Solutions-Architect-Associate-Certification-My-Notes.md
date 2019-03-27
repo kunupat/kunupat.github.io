@@ -40,9 +40,8 @@ Go to the [blog post](https://kunupat.github.io/2019/01/16/AWS-Solutions-Archite
 
 > Control what this user can do in AWS.
 
-IAM policies can be assigned to IAM users, groups and roles.
-
-Sample IAM policy for allowing PUT object action on Amazon S3 bucket:
+-IAM policies can be assigned to IAM users, groups and roles.
+- Sample IAM policy for allowing PUT object action on Amazon S3 bucket:
 
 ```
 {
@@ -59,6 +58,7 @@ Sample IAM policy for allowing PUT object action on Amazon S3 bucket:
 }
 ```
 > **Note:** IAM policy has three main parts: Action, Effect and Resource. An IAM policy DOESN'T have principal.
+- When a new user is created in IAM, it will get **Access Key ID** and **Secret Access Key** generated automatically
 
 ### IAM Roles
 - Global service
@@ -441,6 +441,7 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
   - Offering Class: Standard(Up to 75% off on-demand), Convertible(Up to 54% off on-demand)
   - Scheduled RIs
   - Good for predictable loads
+  - You cannot move a reserved instance from one region to another
 3. **Spot Instances**
   - Bid on the price
   - Good for apps that are flexible with start and end times
@@ -448,6 +449,8 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
   - Physical servers dedicated for you
   - Use your software licenses on these servers hosted in AWS
   - Good for regulatory requirements which may not support multi-tenancy
+- Underlying hypervisor for EC2 is **Xen**
+- There is a soft limit of 20 instances per region. You need to submit limit increase form and retry the failed requests once approved 
 - Termination Protection is turned off by default
 - Default delete action for EBS-backed EC2 instance termination is that the root EBS volume to be deleted when the instance is terminated
 - EBS-backed Root Volumes can be encrypted using AWS API, console or using third party tool like bit locker
@@ -596,30 +599,33 @@ You can launch or start instances in a placement group (to achieve high throughp
 - VPC Tenancy:
   - Default
   - Dedicated
-- First four and the last IP of the CIDR range of AWS subnet are [reserved by AWS](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html). You can't assign these 5 addresses. These are servered for:
+- Five IPs (First four and the last IP) of the CIDR range of AWS subnet are [reserved by AWS](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html). You can't assign these 5 addresses. These are servered for:
   - First IP Address: Network address
   - Second IP Address: VPC Router
   - Third IP Address: For DNS server related
   - Fourth IP Address: For future use
   - Last IP Address: Network broadcast address. As AWS does not support network broadcast in VPC, this address is reserved
+- When you create new subnets within a custom VPC, by default they can communicate with each other, across availability zones.
 - When a new Subnet is created in VPC, it will associated with Main(Default) Route Table by default. This may be risky if Main Route Table has a route to the internet, which means that every new subnet associated with the Main Route table by default will also have this internet route. Create a new Route Table instead and associate the new subnet to it.
+- Once a VPC is set to Dedicated hosting, it is not possible to change the VPC or the instances to Default hosting. You must re-create the VPC.
 
 ### Security Groups (SG)
-  - Only `ALLOW` rules can be specified using SGs. There are no `DENY` rules.
-  - All inbound traffic is blocked by default
-  - All outbound traffic is allowed by default
-  - Security groups are **stateful**. That is, if you create inbound rule to allow traffic in, that traffic is automatically allowed to go back out
-  - Can't use SG to block specific IPs. Use Network Access Control Lists for this purpose
+- Only `ALLOW` rules can be specified using SGs. There are no `DENY` rules.
+- All inbound traffic is blocked by default
+- All outbound traffic is allowed by default
+- Security groups are **stateful**. That is, if you create inbound rule to allow traffic in, that traffic is automatically allowed to go back out
+- Can't use SG to block specific IPs. Use Network Access Control Lists for this purpose
+- If there is more than one rule for a specific port, you **apply the most permissive rule**. For example, if you have a rule that allows access to TCP port 22 (SSH) from IP address 203.0.113.1 and another rule that allows access to TCP port 22 from everyone, everyone has access to TCP port 22
 
 ### Network Access Control Lists (NACLs)
-  - A VPC comes with a default NACL which `ALLOWs` all inbound and outbound traffic. You can create custom NACLs
-  - When a new private(custom) NACL is created, both inbound and outbound rules will be `DENY`
-  - One Subnet can only be associated with one NACL. However, a NACL can be associated with multiple subnets
-  - If a subnet is not associated with a custom NACL, it will be automatically associated with default NACL
-  - The routes are evaluated in numerical **Rule Numbers** order starting with the smallest numbered rule
-  - NACL gets precendance over SG. If NACL rules DENYS traffic and SG ALLOWS it for the same CIDR and Ports, NACL rules be taken into consideration while evaluating open routes
-  - NACLs can span accross multiple AZs, however subnets cannot
-  - **NACLs** are **stateless**
+- A VPC comes with a default NACL which `ALLOWs` all inbound and outbound traffic. You can create custom NACLs
+- When a new private(custom) NACL is created, both inbound and outbound rules will be `DENY`
+- One Subnet can only be associated with one NACL. However, a NACL can be associated with multiple subnets
+- If a subnet is not associated with a custom NACL, it will be automatically associated with default NACL
+- The routes are evaluated in numerical **Rule Numbers** order starting with the smallest numbered rule
+- NACL gets precendance over SG. If NACL rules DENYS traffic and SG ALLOWS it for the same CIDR and Ports, NACL rules be taken into consideration while evaluating open routes
+- NACLs can span accross multiple AZs, however subnets cannot
+- **NACLs** are **stateless**
   
 ### Network Access Translation (NAT)
 - Used to open a route to the internet for the instance which is in a private subnet so that it can get OS patches, download apps, etc.
@@ -700,10 +706,11 @@ You can launch or start instances in a placement group (to achieve high throughp
 ## Databases
 ### RDS- Relational Database Service- OLTP (OnLine Transaction Processing). RDS Engines supported by AWS
   - **MS SQL Server**
-    - SQL Server Express Edition
+    - SQL Server Express Edition (Max size of a db instance is 10GB)
     - SQL Server Web Edition
     - SQL Server Standard Edition
     - SQL Server Enterprise Edition
+    - Amazon RDS does not currently support increasing storage of SQL Server instance
     
   - **MySQL**
     - Open Source RDBMS. MySQL on RDS combines features of the community edition of MySQL and scaling flexibility provided by AWS
@@ -733,7 +740,7 @@ You can launch or start instances in a placement group (to achieve high throughp
     - Up to 64TiB of auto-scaling SSD storage
     - Starts with 10GB and scales in 10GB increments Up to 64TiB
     - Compute resources can scale up to 32 vCPUs and 244GB memory
-    - 6-way replication across three Availability Zones
+    - 6-way replication across three Availability Zones (6 copies of your data will be maintained by Aururo by default)
     - Automatic monitoring and failover in less than 30 seconds (self-healing)
     - 2 types of replicas:
       - Up to 15 Aurora Read Replicas with sub-10ms replica lag
@@ -749,8 +756,11 @@ You can launch or start instances in a placement group (to achieve high throughp
     - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
     - Supports global transaction ID (GTID) and thread pooling
     - Developed and supported by the MariaDB open source community
+    
  - RDS never gives a public IPv4 address to a DB instance. It always provides a DNS endpoint
+ - You can choose specific AZ to deploy your RDS instance to while creating the instance
  - [RDS Limits](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS)
+ - **The default backup retention period is one day if you create the DB instance using the Amazon RDS API or the AWS CLI, or seven days if you create the DB instance using the AWS Console** 
  
 #### RDS Automated Backups  
   - Automated backups are enabled by default and are stored in S3. The size of S3 storage will be same as the size of the RDS instance
@@ -794,6 +804,7 @@ You can launch or start instances in a placement group (to achieve high throughp
   - Supports both key-value and document data models
   - Always stored on SSDs
   - Cheap reads, expensive writes
+  - You **cannot** choose specific AZ to deploy your DynamoDB instance to while creating the instance
   - Read and Write Capacity Units can be changed dynamically without needing to have downtime
   - **Consistency Models:**
     - Eventual Consistent Reads (Default)
@@ -814,6 +825,7 @@ You can launch or start instances in a placement group (to achieve high throughp
     - Best suited for faster query processing for OLAP
     - Advanced Data Compression
     - Massive Parallel Processing (MPP)- By automatically distributing data and query processing across nodes
+    - Block size for columnar data storage is 1024KB/1MB
   - Nodes:
     - Single Node- 160Gb
     - Multi Node:
