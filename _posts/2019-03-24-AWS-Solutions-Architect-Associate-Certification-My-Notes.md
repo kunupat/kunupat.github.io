@@ -737,15 +737,18 @@ You can launch or start instances in a placement group (to achieve high throughp
   - **Amazon Aurora** 
     - Amazon Aurora is a MySQL- and PostgreSQL-compatible enterprise-class database, starting at <$1/day.
     - Up to 5 times the throughput of MySQL and 3 times the throughput of PostgreSQL
-    - Up to 64TiB of auto-scaling SSD storage
-    - Starts with 10GB and scales in 10GB increments Up to 64TiB
+    - Up to 64TB of auto-scaling SSD storage
+    - Starts with 10GB and scales in 10GB increments Up to 64TB
     - Compute resources can scale up to 32 vCPUs and 244GB memory
-    - 6-way replication across three Availability Zones (6 copies of your data will be maintained by Aururo by default)
+    - 6-way replication across three Availability Zones with no additional cost (6 copies of your data will be maintained by Aurora by default)
+      - synchronous replication across 6 nodes in 3 different AZs (zero data loss)
+    - Automatic backup to S3
     - Automatic monitoring and failover in less than 30 seconds (self-healing)
     - 2 types of replicas:
       - Up to 15 Aurora Read Replicas with sub-10ms replica lag
       - Up to 5 MySQL Read Replicas
-      - Automatic failover to Aurora Read Replica and not to MySQL Replica
+    - No concept of standby db; read replica will be promoted to become master db if primary db goes down
+    - Automatic failover to Aurora Read Replica and not to MySQL Replica
     - Not covered in Free-tier
     
   - **MariaDB**
@@ -766,7 +769,7 @@ You can launch or start instances in a placement group (to achieve high throughp
   - Automated backups are enabled by default and are stored in S3. The size of S3 storage will be same as the size of the RDS instance
   - Backups are taken in a pre-defined window. Storage IO may be suspended during backups and will result in latency
   - Automated Backups will be deleted after deleting original RDS instance
-  - backup retention period can be 35 days at the max
+  - backup retention period can be 35 days at the max (soft limit)
   
 #### RDS Snapshots
   - Snapshots are user intiaited
@@ -806,10 +809,14 @@ You can launch or start instances in a placement group (to achieve high throughp
   - Cheap reads, expensive writes
   - You **cannot** choose specific AZ to deploy your DynamoDB instance to while creating the instance
   - Read and Write Capacity Units can be changed dynamically without needing to have downtime
+  - Has two types of Primary Keys: Partition Key (Simple Primary Key) and Partition Key+Sort Key (Composite Primary Key)
   - **Consistency Models:**
-    - Eventual Consistent Reads (Default)
+    - Eventual Consistent Reads (Default) 
     - Strongly Consistent Reads
-  - Spread accross 3 geographically separate regions to achieve redudancy
+  - DynamoDB Replicas are spread accross 3 geographically separate regions to achieve redudancy
+  - Secondary Indexes:
+    - Local Secondary Index: Same Partition Key as the table but different Sort Key
+    - Global Secondary Index: Partition Key and Partition-Sort Key can be different than the table
   - Pricing:
     - Pricing is based on:
       - Provisioned Throughput Capacity:
@@ -817,7 +824,12 @@ You can launch or start instances in a placement group (to achieve high throughp
         - Read Throughput $0.0065/hour for every 50 units
       - Storage Costs:
         - $0.25/GB/Month
-        
+   - Supports:
+      - Global Tables- Cross-Region replication of tables
+      - DynamoDB Streams - Real-time analytics etc.
+      - DynamoDB Accelerator (DAX) - In-memory Cache for DynamoDB
+      - Offers VPC endpoints so that EC2 instances can communicate with DynamoDB internally using private IPs (without going over Internet)
+      
 ### Redshift- Data Warehousing- OLAP (OnLine Analytical Processing)
   - Fully-managed, Petabyte-scale Data Warehouse service
   - Columnar Data Storage-
@@ -828,26 +840,31 @@ You can launch or start instances in a placement group (to achieve high throughp
     - Block size for columnar data storage is 1024KB/1MB
   - Nodes:
     - Single Node- 160Gb
-    - Multi Node:
+    - Multi Node (2 node types):
       - Leader Node: Manages connections and recieves queries
       - Compute Node: Stores data and perform queries and computations. Upto 128 Compute Nodes
+      - Leader node can be placed in a public or private subnet. The compute node is created in a separate VPC, and you don’t have any access to it
   - Pricing:
     - Based on Compute Node Hours
     - No charges for Leader Node. Only Compute Nodes will be charged
     - Backups will be charged
     - Data transfer within VPC will be charged
-   - Security:
-      - Encrypted with SSL in transit
-      - Encrypted at rest by AES-256
-      - Automatically managed encryption keys by RedShift
-      - Can also use your own managed keys
-        - Hardware Security Module (HSM)
-        - AWS KMS
-      - Avilability:
-        - Not Multi-AZ. Available only in one AZ
-        - Can restore snapshots in new AZs, if required
-    
-### ElastiCache- 
+  - Security:
+    - Encrypted with SSL in transit
+    - Encrypted at rest by AES-256
+    - Automatically managed encryption keys by RedShift
+    - Can also use your own managed keys
+      - Hardware Security Module (HSM)
+      - AWS KMS
+  - Avilability:
+      - Not Multi-AZ. Available only in one AZ
+      - Can restore snapshots in new AZs, if required
+  - 2 node types:
+      - Dense Compute (SSD based)-  For performance and compute
+      - Dense Storage (Magnetic Hard Disks)- For dense storage/large workload
+  - **Advanced VPC Routing:** Enable this option while creating RedShift cluster so that the traffic between RedShift and other AWS service will be routed using VPC features (otherwise, the traffic will be routed over Internet)
+  - Backups: Automated backups every 8 hours OR 5GB of block changes. Backups are in the form of incremental snapshots
+### ElastiCache 
   - Web service for deploy, operate and scale in-memory cache in AWS
   - In-memory Caching. Cahching Engines supported by AWS:
     - **Redis:**
@@ -1054,6 +1071,7 @@ You can launch or start instances in a placement group (to achieve high throughp
 2. IAM Keys
 3. CloudTrail
 4. ECS
+5. KMS
 
 ### AWS services that are *NOT* specific to a region
 - *This list is not complete*
