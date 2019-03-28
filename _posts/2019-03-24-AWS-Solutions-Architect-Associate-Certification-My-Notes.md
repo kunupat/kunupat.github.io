@@ -577,7 +577,11 @@ You can launch or start instances in a placement group (to achieve high throughp
 - Detailed monitoring frequencey = 1 minute (will be billed for this)
 - Cloudwatch is for performance monitoring. CloutTrail is for auditing actions done on AWS
 - Cloudwatch has- Dashboards, Alarms, Events and Logs
-
+- Cloudwatch Retention Periods:
+  - 1 minute data point= 15 days
+  - 5 minute data-point= 63 days
+  - 1 hour data-point= 455 days (15 months)
+  
 ## Virtual Private Cloud And Other Services
 - VPC is virtual data center in cloud. VPC is a logically separated isolation within AWS
 - *You* define the network of your VPC including IPs, subnets, routing tables and network gateways. Route tables can control connections between different subnets within VPC
@@ -812,6 +816,7 @@ You can launch or start instances in a placement group (to achieve high throughp
 
 ### DynamoDB- No SQL
   - Fully-managed, no-SQL DB with consistent, single-digit latency at any scale
+  - DynamoDB is Serverless
   - Supports both key-value and document data models
   - Always stored on SSDs
   - Cheap reads, expensive writes
@@ -840,6 +845,7 @@ You can launch or start instances in a placement group (to achieve high throughp
       
 ### Redshift- Data Warehousing- OLAP (OnLine Analytical Processing)
   - Fully-managed, Petabyte-scale Data Warehouse service
+  - Not Serverless
   - Columnar Data Storage-
     - Sequential data storage in columns instead of rows
     - Best suited for faster query processing for OLAP
@@ -965,16 +971,20 @@ You can launch or start instances in a placement group (to achieve high throughp
       - Up to 1000 records/second for writes; up to maximum total data write rate of 1MB/second(including partition keys)
     - 24 Hours to 7 days retention of data
     - Consumers of Kinesis Streams are EC2 instances
+    - Use for custom processing of large streaming data
   - **Kinesis Firehose:**
     - No need to do manual configuration of shards. More automated than Kinesis Streams
     - No automatic data retention
     - Does not have Shards
     - Automatic analytics using Lambda can be done
+    - Firehose data can go to only S3 or to RedShift or to ElasticSearch
+    - Use for simply ingesting data to S3/RedShift/ElasticSearch (Delivery Stream)
+    - Use for large amounts of non-streaming data
   - **Kinesis Analytics:**
     - Run SQL-type queries on data within Kinesis Streams or Kinesis Firehose for analytical purposes
 
 ## CloudFormation
-- AWS infra-provisioner using human-readable (JSON) format and drag-and-drop GUI
+- AWS infra-provisioner using human-readable (JSON/YAML) format and drag-and-drop GUI
 
 ## Elastic Container Service
 - ECS is a AWS service to run, stop and manage Docker containers on a cluser of EC2 instances
@@ -1071,11 +1081,21 @@ You can launch or start instances in a placement group (to achieve high throughp
 ## Other Notes
 - For processing large amount of data in AWS (running analytics, for example) use-
   - RedShift: For Business Intelligence (analytics)
-  - Map Reduce: For Big Data Processing
+  - Amazon Elastic Map Reduce(EMR): For Big Data Processing
   - Get the data in using AWS Kinesis
-- OpsWorks:
-  - *Chef* based infra-provisioning/orchestration service provided by AWS
-  
+    - Streaming data: Kinesis Data Stream
+    - Delivery (non-streaming) data ingestion: Kinesis Firehose
+- **OpsWorks:**
+  - *Chef* or *Puppet* based infra-provisioning/orchestration (similar to Ansible) service provided by AWS
+- **Trusted Advisor** is used for monitoring **service limits** of EC2 instances etc.
+- **AWS Config** maintains the configuration of the system and helps you to identify what change was made in it
+- **Amazon EMR**
+  - Used for Big-data processing (Hadoop, Apache Spark, etc.)
+  - Three types of nodes:
+    - Master Node: This node takes care of coordinating the distribution of the job across core and task nodes
+    - Core Node: This node takes care of running the task that the master node assigns. This node also stores the data in the Hadoop Distributed File System (HDFS) on your cluster
+    - Task Node: This node runs only the task and does not store any data. The task nodes are optional and provide pure compute to your cluster
+    
 ### AWS services that are specific to a region
 - *This list is not complete*
 - The below AWS services are specific to a AWS region. E.g. If you plan to launch AWS EC2 instances in multiple regions, you'll need to create a security group in each region:
