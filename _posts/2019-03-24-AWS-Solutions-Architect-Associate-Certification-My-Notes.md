@@ -704,7 +704,7 @@ You can launch or start instances in a placement group (to achieve high throughp
 - Number of domains that can be managed using Route53 is 50, by default. However, this is soft limit and it can be extended by contacting AWS support
 
 ## Databases
-### RDS- Relational Database Service- OLTP (OnLine Transaction Processing). RDS Engines supported by AWS  
+### RDS- Relational Database Service- OLTP (OnLine Transaction Processing) 
   - RDS never gives a public IPv4 address to a DB instance. It always provides a DNS endpoint
   - You can choose specific AZ to deploy your RDS instance to while creating the instance
   - [RDS Limits](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS)
@@ -715,61 +715,63 @@ You can launch or start instances in a placement group (to achieve high throughp
     - General Purpose SSD
     - Provisioned IOPS
     - Magnetic (Supported for backward compatibility only. Don't use for new storage needs)
-  - **MS SQL Server**
-    - SQL Server Express Edition (Max size of a db instance is 10GB)
-    - SQL Server Web Edition
-    - SQL Server Standard Edition
-    - SQL Server Enterprise Edition
-    - Amazon RDS does not currently support increasing storage of SQL Server instance
-    
-  - **MySQL**
-    - Open Source RDBMS. MySQL on RDS combines features of the community edition of MySQL and scaling flexibility provided by AWS
-    - Supports database size up to 32 TiB
-    - Supports General Purpose, Memory Optimized, and Burstable Performance instance classes
-    - Supports automated backup and point-in-time recovery
-    - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
-    
-  - **PostgreSQL**
-    - Popular open source RDBMS known for reliability, stability and correctness
-    - High reliability and stability in a variety of workloads
-    - Advanced features to perform in high-volume environments
-    - Vibrant open-source community that releases new features multiple times per year
-    - Supports multiple extensions that add even more functionality to the database
-    - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
-    - The most Oracle-compatible open-source database
-  
-  - **Oracle**
-    - Enterprise Edition
-    - Standard Edition
-    - Standard Edition One
-    - Standard Edition Two
-    
-  - **Amazon Aurora** 
-    - Amazon Aurora is a MySQL- and PostgreSQL-compatible enterprise-class database, starting at <$1/day.
-    - Up to 5 times the throughput of MySQL and 3 times the throughput of PostgreSQL
-    - Up to 64TB of auto-scaling SSD storage
-    - Starts with 10GB and scales in 10GB increments Up to 64TB
-    - Compute resources can scale up to 32 vCPUs and 244GB memory
-    - 6-way replication across three Availability Zones with no additional cost (6 copies of your data will be maintained by Aurora by default)
-      - synchronous replication across 6 nodes in 3 different AZs (zero data loss)
-    - Automatic backup to S3
-    - Automatic monitoring and failover in less than 30 seconds (self-healing)
-    - 2 types of replicas:
-      - Up to 15 Aurora Read Replicas with sub-10ms replica lag
-      - Up to 5 MySQL Read Replicas
-    - No concept of standby db; read replica will be promoted to become master db if primary db goes down
-    - Automatic failover to Aurora Read Replica and not to MySQL Replica
-    - Not covered in Free-tier
-    
-  - **MariaDB**
-    - MySQL-compatible community edition
-    - Supports database size up to 32 TiB
-    - Supports General Purpose, Memory Optimized, and Burstable Performance instance classes
-    - Supports automated backup and point-in-time recovery
-    - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
-    - Supports global transaction ID (GTID) and thread pooling
-    - Developed and supported by the MariaDB open source community
  
+ - RDS Engines supported by AWS: 
+    - **MS SQL Server**
+      - SQL Server Express Edition (Max size of a db instance is 10GB)
+      - SQL Server Web Edition
+      - SQL Server Standard Edition
+      - SQL Server Enterprise Edition
+      - Amazon RDS does not currently support increasing storage of SQL Server instance
+    
+    - **MySQL**
+      - Open Source RDBMS. MySQL on RDS combines features of the community edition of MySQL and scaling flexibility provided by AWS
+      - Supports database size up to 32 TiB
+      - Supports General Purpose, Memory Optimized, and Burstable Performance instance classes
+      - Supports automated backup and point-in-time recovery
+      - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
+
+    - **PostgreSQL**
+      - Popular open source RDBMS known for reliability, stability and correctness
+      - High reliability and stability in a variety of workloads
+      - Advanced features to perform in high-volume environments
+      - Vibrant open-source community that releases new features multiple times per year
+      - Supports multiple extensions that add even more functionality to the database
+      - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
+      - The most Oracle-compatible open-source database
+
+    - **Oracle**
+      - Enterprise Edition
+      - Standard Edition
+      - Standard Edition One
+      - Standard Edition Two
+
+    - **Amazon Aurora** 
+      - Amazon Aurora is a MySQL- and PostgreSQL-compatible enterprise-class database, starting at <$1/day.
+      - Up to 5 times the throughput of MySQL and 3 times the throughput of PostgreSQL
+      - Up to 64TB of auto-scaling SSD storage
+      - Starts with 10GB and scales in 10GB increments Up to 64TB
+      - Compute resources can scale up to 32 vCPUs and 244GB memory
+      - 6-way replication across three Availability Zones with no additional cost (6 copies of your data will be maintained by Aurora by default)
+        - synchronous replication across 6 nodes in 3 different AZs (zero data loss)
+      - Automatic backup to S3
+      - Automatic monitoring and failover in less than 30 seconds (self-healing)
+      - 2 types of replicas:
+        - Up to 15 Aurora Read Replicas with sub-10ms replica lag
+        - Up to 5 MySQL Read Replicas
+      - No concept of standby db; read replica will be promoted to become master db if primary db goes down
+      - Automatic failover to Aurora Read Replica and not to MySQL Replica
+      - Not covered in Free-tier
+
+    - **MariaDB**
+      - MySQL-compatible community edition
+      - Supports database size up to 32 TiB
+      - Supports General Purpose, Memory Optimized, and Burstable Performance instance classes
+      - Supports automated backup and point-in-time recovery
+      - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
+      - Supports global transaction ID (GTID) and thread pooling
+      - Developed and supported by the MariaDB open source community
+
 #### RDS Automated Backups  
   - Automated backups are enabled by default and are stored in S3. The size of S3 storage will be same as the size of the RDS instance
   - Backups are taken in a pre-defined window. Storage IO may be suspended during backups and will result in latency
