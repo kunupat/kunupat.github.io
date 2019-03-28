@@ -704,7 +704,17 @@ You can launch or start instances in a placement group (to achieve high throughp
 - Number of domains that can be managed using Route53 is 50, by default. However, this is soft limit and it can be extended by contacting AWS support
 
 ## Databases
-### RDS- Relational Database Service- OLTP (OnLine Transaction Processing). RDS Engines supported by AWS
+### RDS- Relational Database Service- OLTP (OnLine Transaction Processing). RDS Engines supported by AWS  
+  - RDS never gives a public IPv4 address to a DB instance. It always provides a DNS endpoint
+  - You can choose specific AZ to deploy your RDS instance to while creating the instance
+  - [RDS Limits](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS)
+  - **The default backup retention period is one day if you create the DB instance using the Amazon RDS API or the AWS CLI, or seven days if you create the DB instance using the AWS Console** 
+  - Cross-Region Replication and read-replicas in same region are replicated asynchronously. This may result in data loss
+  - Use Master-Slave(primary/secondary or master/standby) architecture supports synchronous data replication. Use this to avoid data loss
+  - <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html" target="_blank">Three Storage Types:</a>
+    - General Purpose SSD
+    - Provisioned IOPS
+    - Magnetic (Supported for backward compatibility only. Don't use for new storage needs)
   - **MS SQL Server**
     - SQL Server Express Edition (Max size of a db instance is 10GB)
     - SQL Server Web Edition
@@ -759,11 +769,6 @@ You can launch or start instances in a placement group (to achieve high throughp
     - Supports up to 5 Read Replicas per instance, within a single Region or cross-region
     - Supports global transaction ID (GTID) and thread pooling
     - Developed and supported by the MariaDB open source community
-    
- - RDS never gives a public IPv4 address to a DB instance. It always provides a DNS endpoint
- - You can choose specific AZ to deploy your RDS instance to while creating the instance
- - [RDS Limits](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS)
- - **The default backup retention period is one day if you create the DB instance using the Amazon RDS API or the AWS CLI, or seven days if you create the DB instance using the AWS Console** 
  
 #### RDS Automated Backups  
   - Automated backups are enabled by default and are stored in S3. The size of S3 storage will be same as the size of the RDS instance
@@ -864,14 +869,18 @@ You can launch or start instances in a placement group (to achieve high throughp
       - Dense Storage (Magnetic Hard Disks)- For dense storage/large workload
   - **Advanced VPC Routing:** Enable this option while creating RedShift cluster so that the traffic between RedShift and other AWS service will be routed using VPC features (otherwise, the traffic will be routed over Internet)
   - Backups: Automated backups every 8 hours OR 5GB of block changes. Backups are in the form of incremental snapshots
+
 ### ElastiCache 
   - Web service for deploy, operate and scale in-memory cache in AWS
   - In-memory Caching. Cahching Engines supported by AWS:
+    - **Memcached**
+      - Does NOT support multi-AZ redundancy and replication
+      - Multi-threaded
     - **Redis:**
       - Supports multi-AZ deployment for redundancy and Master-Slave replication
-    - **Memcached**
-      - Does not support multi-AZ redundancy
+      - Supports built-in disk persistence
   - Good choice for less frequently changed data and read-heavy transactions
+  - For best performance, you should configure your ElastiCache cluster to use the same availability zones as your application servers
   
 ## Simple Queue Service
 - SQS was the first AWS service that was made available to the public
