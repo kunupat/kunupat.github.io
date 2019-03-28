@@ -35,12 +35,15 @@ Go to the [blog post](https://kunupat.github.io/2019/01/16/AWS-Solutions-Archite
 * [Other Notes](#other-notes)
 * [Exam structure in January 2019](#exam-structure-in-january-2019)
 
+## AWS Services Documentation
+<a href="https://docs.aws.amazon.com/index.html#lang/en_us" target="_blank">Documentation of all AWS Services</a>
+
 ## Identity and Access Management
 ### IAM Policies
 
 > Control what this user can do in AWS.
 
--IAM policies can be assigned to IAM users, groups and roles.
+- IAM policies can be assigned to IAM users, groups and roles.
 - Sample IAM policy for allowing PUT object action on Amazon S3 bucket:
 
 ```
@@ -617,9 +620,12 @@ You can launch or start instances in a placement group (to achieve high throughp
 - Only `ALLOW` rules can be specified using SGs. There are no `DENY` rules.
 - All inbound traffic is blocked by default
 - All outbound traffic is allowed by default
+- You can assign maximum 5 SGs to an EC2 instance. **Security groups act at the instance level, not the subnet level**
 - Security groups are **stateful**. That is, if you create inbound rule to allow traffic in, that traffic is automatically allowed to go back out
 - Can't use SG to block specific IPs. Use Network Access Control Lists for this purpose
 - If there is more than one rule for a specific port, you **apply the most permissive rule**. For example, if you have a rule that allows access to TCP port 22 (SSH) from IP address 203.0.113.1 and another rule that allows access to TCP port 22 from everyone, everyone has access to TCP port 22
+- <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html" target="_blank">For more details about SGs</a> 
+- <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Security.html#VPC_Security_Comparison" target="_blank">Comparison of SG and Network ACLs</a>
 
 ### Network Access Control Lists (NACLs)
 - A VPC comes with a default NACL which `ALLOWs` all inbound and outbound traffic. You can create custom NACLs
@@ -630,7 +636,8 @@ You can launch or start instances in a placement group (to achieve high throughp
 - NACL gets precendance over SG. If NACL rules DENYS traffic and SG ALLOWS it for the same CIDR and Ports, NACL rules be taken into consideration while evaluating open routes
 - NACLs can span accross multiple AZs, however subnets cannot
 - **NACLs** are **stateless**
-  
+- <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html" target="_blank">For more details about NACLs</a> 
+
 ### Network Access Translation (NAT)
 - Used to open a route to the internet for the instance which is in a private subnet so that it can get OS patches, download apps, etc.
 - NATing can be done using- NAT Gateways OR ~~NAT instances(will be depricated soon)~~
