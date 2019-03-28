@@ -762,7 +762,8 @@ You can launch or start instances in a placement group (to achieve high throughp
       - No concept of standby db; read replica will be promoted to become master db if primary db goes down
       - Automatic failover to Aurora Read Replica and not to MySQL Replica
       - Not covered in Free-tier
-
+      - Multimaster is not supported in Aurora
+      
     - **MariaDB**
       - MySQL-compatible community edition
       - Supports database size up to 32 TiB
@@ -792,16 +793,16 @@ You can launch or start instances in a placement group (to achieve high throughp
   - Existing RDS instance cannot be encrypted. To encrypt existing RDS instance, take a snapshot of it, make a copy of the snapshot and encrypt the copy
 
 #### Multi-AZ Deployment
-  - Used for Disater Recovery (DR) only. NOT as Read Replicas.
-  - AWS automatically reoplicates RDS instance into another AZ. Supports automatic failover to stanby replica
+  - Used for Disater Recovery (DR) only. NOT as Read Replicas. It is in Master-Slave architecture
+  - AWS automatically replicates RDS instance into another AZ. Supports automatic failover to standby replica
   - Available for all RDS engines. Aurora DB is multi-AZ by default
-  - It is synchronous
+  - **It is synchronous**
   
 #### Read Replicas
   - Used for improving performance (scaling)
   - Can have 5 read replicas of a production DB by default
   - Read-only copies of prod DB
-  - It is asynchronous
+  - **It is asynchronous**
   - Not available for SQL Server and Oracle engines. Other 4 are supported
   - Must have Automated Backups turned on to deploy Read Replicas
   - Can create Read Replicas of Read Replicas (however, it adds latency)
@@ -864,7 +865,7 @@ You can launch or start instances in a placement group (to achieve high throughp
       - Hardware Security Module (HSM)
       - AWS KMS
   - Avilability:
-      - Not Multi-AZ. Available only in one AZ
+      - Not Multi-AZ. RedShift Cluster can only be available in one AZ
       - Can restore snapshots in new AZs, if required
   - 2 node types:
       - Dense Compute (SSD based)-  For performance and compute
