@@ -182,7 +182,11 @@ These are used to provide access(PUT/GET) to users/applications who do not have 
 CORS can be configured using a XML config file that can contain 100 CORS rules.Use AWS SDK to apply CORS configuration to S3 bucket. CORS configration is used to allow access to S3 objects from an application hosted in different domain.
 
 ### S3 Bucket Access
-
+- Three ways to control access in S3:
+1. Access Policies using IAM
+2. Bucket Policies
+3. Access Control List (Cannot provide fine-grained access control like Access Policies and Bucket Policies)
+  
 #### Bucket Policies
 > Control who can access this bucket.
 - Use to make entire bucket public
@@ -228,7 +232,7 @@ CORS can be configured using a XML config file that can contain 100 CORS rules.U
 
 - Multiple Policy Evaluation: AWS evaluates all policies applied as **OR**. You can define all policies in one policy or in multiple policies. Policies can be attached to a group or to IAM user.
 
-- Access Control Lists: 
+#### Access Control Lists 
   - You may not need IAM policies if ACL are sufficient to control access to buckets.
   - The bucket policy applies only to objects that are owned by the bucket owner. If your bucket contains objects that aren't owned by the bucket owner, public READ permission on those objects should be granted using the object access control list (ACL).
   
@@ -318,7 +322,8 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
 5. **Default Encryption**
 
 ### Managing Storage
-- Lifecycle Configuration Rules can be used for Automatic Transition to S3 storage tier.
+- Lifecycle Configuration Rules can be used for Automatic Transition to S3 storage tier
+- Lifecycle rules are attached to a bucket. If you want to apply the rules to a few files, prefix the files with a unique prefix and then enable the lifecycle rule on the prefix
 - S3 Standard to others:
   - objects < 128 KB cannot be transitioned
   - objects must be stored for more than 30 days
@@ -380,7 +385,7 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
   - **Request Rate Performance(on a single partition):**
     - 3500 `PUT/POST/DELETE` combined requests per second
     - 5500 `GET` requests per second
-    - Amazon *automatically* uses multiple partitions if the no. of requests exceed the above limits to avoid seeing `HTTP 500` error codes. You can also do pre-partitioning of data (work with AWS Support)
+    - Amazon *automatically* uses multiple partitions if the no. of requests exceed the above limits to avoid seeing `HTTP 500` error codes. You can also do pre-partitioning of data (work with AWS Support). Use partitioning strategy for getting best performance while uploading several files to S3
   - **Parallalization:**
      - Parallal uploads
      - Multiplart uploads (consider this when oject size exceeds 100MB)
@@ -400,14 +405,15 @@ It can be either AES-256 or AWS-KMS or None. Any new object will be encrypted wi
 - Propogates data from your on-premises data center to S3/Glaciar
 - Types of storage gateway:
   - **File Gateway (NFS)**
-    - For storing flat files only
+    - To store and retrieve flat files only to/from S3
   - **Volumes Gateway** (iSCSI- block based storage like a virtual hard disk)
-    - This is block storage (can be used for OS, applications, etc.), It has two types:
-      - Stored Volumes:
+    - This is block storage (can be used for OS, applications, etc.)
+    - It has two types:
+      - **Stored Volumes:**
         - Data is stored locally (on-prem hard disks) and then backed up into S3 in the form of Amazon EBS (incremental) snapshots asynchronously
         - 1GB to 16TB in size for stored volumes
         - Needs more storage capacity on-prem
-      - Cached Volumes:
+      - **Cached Volumes:**
         - S3 is primary data storage and frequently accessed data is cached locally in your storage gateway providing low-latency access to frequently accessed data from on-prem
         - You can create storage volumes from 1GB to 32TB and attach them as iSCSI devices from on-prem app servers
         - Needs less storage capacity on-prem compared to Stored Volumes
@@ -495,9 +501,10 @@ You can launch or start instances in a placement group (to achieve high throughp
 
 ## Elastic Block Storage
 - Think of Elastic Block Storage (EBS) as a virtual disk in AWS cloud. EBS is attached to an EC2 instance.
-- EBS volumes are persistent and can be detached and reattached to other EC2 instances
+- EBS volumes are persistent and can be detached and reattached to other EC2 instances (to instances within the same AZ only)
 - EBS volumes can be stopped without loosing data
 - Sizes vary from 1GB to 16TB; allocated in 1GB increments
+- The data across the EBS volume is mirrored across the same AZ 
 - Use **EBS-optimized instances** when you need to enable your EC2 instances to maximize the performance of EBS volumes, as EBS-optimized instances deliver dedicated throughput between Amazon EC2 and Amazon EBS, with speeds between 500 Mbps and 10,000 Mbps depending on the instance type
 - **EBS Volume Types:**
   - General Purpose SSD(GP2)
