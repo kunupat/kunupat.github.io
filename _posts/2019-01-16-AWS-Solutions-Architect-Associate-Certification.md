@@ -8,6 +8,9 @@ AWS Solution Architect (February 2018) Associate Level Certification Exam Prepar
 ## My Notes
 Refer <a href="https://kunupat.github.io/2019/03/24/AWS-Solutions-Architect-Associate-Certification-My-Notes.html" target="_blank"> my AWS Solutions Architect Associate Certification February 2018 Notes </a> 
 
+## Reference Book
+The <a href="https://amzn.to/2WwevNI" target="_blank">AWS Certified Solutions Architect Associate All-in-One Exam Guide (Exam SAA-C01) by Joyjeet Banerjee</a> book really helped me in preparation. The book has questions at the end of each chapter and these questions really get close to the actual exam questions. The book is concise & to-the-point as well which makes it a good read.
+
 ## Exam Guide and Preparation- Overview
 1. <a href="https://aws.amazon.com/certification/certified-solutions-architect-associate/" target="_blank">About the exam</a>
 2.	<a href="https://aws.amazon.com/certification/certification-prep/" target="_blank">Preperation</a>
