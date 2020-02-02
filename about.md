@@ -43,10 +43,10 @@ title: Kunal Patil- About Me
 					    </div><!--//primary-info-->
 					    <div class="secondary-info ml-md-auto">
 						    <ul class="resume-social list-unstyled">
-				                <li class="mb-3"><a href="https://www.linkedin.com/in/kunal-m-patil/" target="_blank"><span class="fa-container text-center mr-2" ><i class="fab fa-linkedin-in fa-fw"></i></span>linkedin.com/in/kunal-m-patil</a></li>
-				                <li class="mb-3"><a href="https://github.com/kunupat" target="_blank"><span class="fa-container text-center mr-2"><i class="fab fa-github-alt fa-fw"></i></span>github.com/kunupat</a></li>
-				                <li class="mb-3"><a href="https://hub.docker.com/u/kunupat" target="_blank"><span class="fa-container text-center mr-2"><i class="fab fa-docker fa-fw"></i></span>hub.docker.com/u/kunupat</a></li>
-				                <li class="mb-3"><a href="https://kunalpatil.online" target="_blank"><span class="fa-container text-center mr-2"><i class="fas fa-globe"></i></span>kunalpatil.online</a></li>
+				                <li class="mb-3"><a href="https://www.linkedin.com/in/kunal-m-patil/"  target="_blank"><span class="fa-container text-center mr-2" ><i class="fab fa-linkedin-in fa-fw"></i></span>linkedin.com/in/kunal-m-patil</a></li>
+				                <li class="mb-3"><a href="https://github.com/kunupat"  target="_blank"><span class="fa-container text-center mr-2"><i class="fab fa-github-alt fa-fw"></i></span>github.com/kunupat</a></li>
+				                <li class="mb-3"><a href="https://hub.docker.com/u/kunupat"  target="_blank"><span class="fa-container text-center mr-2"><i class="fab fa-docker fa-fw"></i></span>hub.docker.com/u/kunupat</a></li>
+				                <li class="mb-3"><a href="https://kunalpatil.online"  target="_blank"><span class="fa-container text-center mr-2"><i class="fas fa-globe"></i></span>kunalpatil.online</a></li>
 								<li><a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-03-29&ci=AWS00828325" target="_blank"><span class="fa-container text-center mr-2"><i class="fab fa-aws"></i></span>AWS Certified Solutions Architect- Associate</a></li>
 						    </ul>
 					    </div><!--//secondary-info-->
@@ -308,11 +308,11 @@ title: Kunal Patil- About Me
 										<li class="list-inline-item"><span class="badge badge-light">Amazon Alexa</span></li>
 										<li class="list-inline-item"><span class="badge badge-light">DialogFlow</span></li>
 							            <li class="list-inline-item"><span class="badge badge-light">Google Actions</span></li>
-										<li class="list-inline-item"><span class="badge badge-light">OpenAPI/Swagger</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">OpenAPI,Swagger</span></li>
 										<li class="list-inline-item"><span class="badge badge-light">APIGEE</span></li>
 							            <li class="list-inline-item"><span class="badge badge-light">ELK Stack</span></li>
 										<li class="list-inline-item"><span class="badge badge-light">Splunk</span></li>
-										<li class="list-inline-item"><span class="badge badge-light">Agile</li>
+										<li class="list-inline-item"><span class="badge badge-light">Agile</span></li>
 										<li class="list-inline-item"><span class="badge badge-light">Atlassian Jira</span></li>
 										<li class="list-inline-item"><span class="badge badge-light">Slack</span></li>
 						            </ul>
