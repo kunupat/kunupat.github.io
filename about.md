@@ -38,7 +38,7 @@ title: Kunal Patil- About Me
 						    <div class="title mb-3">Solutions Architect</div>
 						    <ul class="list-unstyled">
 							    <li class="mb-2"><a href="#"><i class="far fa-envelope fa-fw mr-2" data-fa-transform="grow-3"></i>kunal.m.patil@gmail.com</a></li>
-							    <li><a href="#"><i class="fas fa-mobile-alt fa-fw mr-2" data-fa-transform="grow-6"></i>Mail to request</a></li>
+							    <li><a href="#"><i class="fas fa-mobile-alt fa-fw mr-2" data-fa-transform="grow-6"></i>Available on request</a></li>
 						    </ul>
 					    </div><!--//primary-info-->
 					    <div class="secondary-info ml-md-auto mt-2">
@@ -57,7 +57,7 @@ title: Kunal Patil- About Me
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0">Presently I work as a Solutions Architect in Travel, Transportatoin and Hospitality domain. I have 13+ years work experience in entrprise software development. My primary skillsets are Java and Amazon Web Services. I have acquired "AWS Certified Solutions Architect- Associate" certification in 2019.</p>
+					    <p class="mb-0">I Presently work as a Solutions Architect in Travel, Transportatoin and Hospitality domain. I have 13+ years work experience in entrprise software development. My primary skillsets are Java and Amazon Web Services. I acquired "AWS Certified Solutions Architect- Associate" certification in 2019.</p>
 				    </div>
 			    </section><!--//summary-section-->
 
@@ -72,7 +72,7 @@ title: Kunal Patil- About Me
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
 										        <h3 class="resume-position-title font-weight-bold mb-1">Solutions Architect</h3>
-										        <div class="resume-company-name ml-auto">Startup Hub</div>
+										        <div class="resume-company-name ml-auto">Company Name: Available on request</div>
 										    </div><!--//row-->
 										    <div class="resume-position-time">2019 - Present</div>
 									    </div><!--//resume-timeline-item-header-->
@@ -96,7 +96,7 @@ title: Kunal Patil- About Me
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
 										        <h3 class="resume-position-title font-weight-bold mb-1">Solutions Architect</h3>
-										        <div class="resume-company-name ml-auto">Google</div>
+										        <div class="resume-company-name ml-auto">Company Name: Available on request</div>
 										    </div><!--//row-->
 										    <div class="resume-position-time">2019 - Present</div>
 									    </div><!--//resume-timeline-item-header-->
