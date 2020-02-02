@@ -3,7 +3,6 @@ layout: about
 title: Kunal Patil- About Me
 ---
 
-<!DOCTYPE html>
 <html lang="en"> 
 <head>
     <title>Pillar - Bootstrap 4 Resume/CV Template for Developers</title>
