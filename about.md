@@ -47,7 +47,7 @@ title: Kunal Patil- About Me
 				                <li class="mb-3"><a href="https://github.com/kunupat"><span class="fa-container text-center mr-2"><i class="fab fa-github-alt fa-fw"></i></span>github.com/kunupat</a></li>
 				                <li class="mb-3"><a href="https://hub.docker.com/u/kunupat"><span class="fa-container text-center mr-2"><i class="fab fa-docker fa-fw"></i></span>hub.docker.com/u/kunupat</a></li>
 				                <li><a href="https://kunalpatil.online"><span class="fa-container text-center mr-2"><i class="fas fa-globe"></i></span>kunalpatil.online</a></li>
-								 <li><a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-03-29&ci=AWS00828325"><span class="fa-container text-center mr-2"><i class="fas fa-aws"></i></span>AWS Certified Solutions Architect- Associate</a></li>
+								<li><a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-03-29&ci=AWS00828325"><span class="fa-container text-center mr-2"><i class="fab fa-aws"></i></span>AWS Certified Solutions Architect- Associate</a></li>
 						    </ul>
 					    </div><!--//secondary-info-->
 					    
