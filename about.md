@@ -101,7 +101,7 @@ title: Kunal Patil- About Me
 										    <div class="resume-position-time">2019 - Present</div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>Deploy cloud native SpringBoot microservices on RedHat Openshift Platform (OCP) Service Mesh. Design OpenShift CI/CD Pipeline. Configure OCP Service Mesh</p>
+										    <p>Deploy cloud native SpringBoot microservices on RedHat Openshift Platform (OCP) Service Mesh. Design OpenShift CI/CD Pipeline. Configure OCP Service Mesh.</p>
 										    
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
