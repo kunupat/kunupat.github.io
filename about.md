@@ -47,6 +47,7 @@ title: Kunal Patil- About Me
 				                <li class="mb-3"><a href="https://github.com/kunupat"><span class="fa-container text-center mr-2"><i class="fab fa-github-alt fa-fw"></i></span>github.com/kunupat</a></li>
 				                <li class="mb-3"><a href="https://hub.docker.com/u/kunupat"><span class="fa-container text-center mr-2"><i class="fab fa-docker fa-fw"></i></span>hub.docker.com/u/kunupat</a></li>
 				                <li><a href="https://kunalpatil.online"><span class="fa-container text-center mr-2"><i class="fas fa-globe"></i></span>kunalpatil.online</a></li>
+								 <li><a href="https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2019-03-29&ci=AWS00828325"><span class="fa-container text-center mr-2"><i class="fas fa-aws"></i></span>AWS Certified Solutions Architect- Associate</a></li>
 						    </ul>
 					    </div><!--//secondary-info-->
 					    
@@ -57,7 +58,7 @@ title: Kunal Patil- About Me
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0">I Presently work as a Solutions Architect in Travel, Transportatoin and Hospitality domain. I have 13+ years work experience in entrprise software development. My primary skillsets are Java and Amazon Web Services. I acquired "AWS Certified Solutions Architect- Associate" certification in 2019.</p>
+					    <p class="mb-0">I Presently work as a Solutions Architect in Travel, Transportation and Hospitality domain. I have 13+ years work experience in enterprise software development. My primary skillsets are Java and Amazon Web Services. I acquired "AWS Certified Solutions Architect- Associate" certification in 2019.</p>
 				    </div>
 			    </section><!--//summary-section-->
 
@@ -311,6 +312,9 @@ title: Kunal Patil- About Me
 										<li class="list-inline-item"><span class="badge badge-light">APIGEE</span></li>
 							            <li class="list-inline-item"><span class="badge badge-light">ELK Stack</span></li>
 										<li class="list-inline-item"><span class="badge badge-light">Splunk</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Agile</li>
+										<li class="list-inline-item"><span class="badge badge-light">Atlassian Jira</span></li>
+										<li class="list-inline-item"><span class="badge badge-light">Slack</span></li>
 						            </ul>
 						        </div><!--//resume-skill-item-->
 						    </div><!--resume-section-content-->
