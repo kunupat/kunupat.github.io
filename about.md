@@ -333,13 +333,13 @@ title: Kunal Patil- About Me
 							    <ul class="list-unstyled resume-awards-list">
 								    <li class="mb-2 pl-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">Award Name Lorem</div>
-								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo.</div>
+								        <div class="resume-award-name">Contextual Master Award</div>
+								        <div class="resume-award-desc">Awarded for my domain and technology knowledge.</div>
 								    </li>
 								    <li class="mb-0 pl-4 position-relative">
 								        <i class="resume-award-icon fas fa-trophy position-absolute" data-fa-transform="shrink-2"></i>
-								        <div class="resume-award-name">Award Name Ipsum</div>
-								        <div class="resume-award-desc">Award desc goes here, ultricies nec, pellentesque.</div>
+								        <div class="resume-award-name">IP Creation Award</div>
+								        <div class="resume-award-desc">Awarded for filing patent.</div>
 								    </li>
 							    </ul>
 						    </div>
