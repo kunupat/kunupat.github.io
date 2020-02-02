@@ -5,8 +5,6 @@ title: Kunal Patil- About Me
 
 <html lang="en"> 
 <head>
-    <title>Pillar - Bootstrap 4 Resume/CV Template for Developers</title>
-    
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,9 +57,10 @@ title: Kunal Patil- About Me
 			    <section class="resume-section summary-section mb-5">
 				    <h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3">Career Summary</h2>
 				    <div class="resume-section-content">
-					    <p class="mb-0">Summarise your career here. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. You can download this free resume/CV template here. Aenean commodo ligula eget dolor aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget.</p>
+					    <p class="mb-0">Presently I work as a Solutions Architect in Travel, Transportatoin and Hospitality domain. I have 13+ years work experience in entrprise software development. My primary skillsets are Java and Amazon Web Services. I have acquired "AWS Certified Solutions Architect- Associate" certification in 2019.</p>
 				    </div>
 			    </section><!--//summary-section-->
+
 			    <div class="row">
 				    <div class="col-lg-9">
 					    <section class="resume-section experience-section mb-5">
@@ -72,28 +71,20 @@ title: Kunal Patil- About Me
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Lead Developer</h3>
+										        <h3 class="resume-position-title font-weight-bold mb-1">Solutions Architect</h3>
 										        <div class="resume-company-name ml-auto">Startup Hub</div>
 										    </div><!--//row-->
-										    <div class="resume-position-time">2018 - Present</div>
+										    <div class="resume-position-time">2019 - Present</div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements:</h4>
-										    <p>Praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-										    <ul>
-											    <li>Lorem ipsum dolor sit amet, 80% consectetuer adipiscing elit.</li>
-											    <li>At vero eos et accusamus et iusto odio dignissimos.</li>
-											    <li>Blanditiis praesentium voluptatum deleniti atque corrupti.</li>
-											    <li>Maecenas tempus tellus eget.</li>
-										    </ul>
+										    <p>Design secure & scalable architecture for a legacy modernization project that migrates Mainframe apps to AWS cloud using Java, SpringBoot as primary target platform.</p>
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
 											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Angular</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Python</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">jQuery</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Webpack</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML/SASS</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">SpringBoot</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">java</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">AWS</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Kafka</span></li>
 											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">PostgresSQL</span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
@@ -104,75 +95,28 @@ title: Kunal Patil- About Me
 									    
 									    <div class="resume-timeline-item-header mb-2">
 										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Senior Software Developer</h3>
+										        <h3 class="resume-position-title font-weight-bold mb-1">Solutions Architect</h3>
 										        <div class="resume-company-name ml-auto">Google</div>
 										    </div><!--//row-->
-										    <div class="resume-position-time">2014 - 2018</div>
+										    <div class="resume-position-time">2019 - Present</div>
 									    </div><!--//resume-timeline-item-header-->
 									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Donec pede justo, fringilla vel.</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Achievements</h4>
-										    <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+										    <p>Deploy cloud native SpringBoot microservices on RedHat Openshift Platform (OCP) Service Mesh. Design OpenShift CI/CD Pipeline. Configure OCP Service Mesh</p>
+										    
 										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
 										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">React</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Redux</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Django</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Webpack</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML/SASS</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">MySQL</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Java/SpringBoot</span></li>
+												<li class="list-inline-item"><span class="badge badge-primary badge-pill">Java/Quarkus</span></li>
+												<li class="list-inline-item"><span class="badge badge-primary badge-pill">Hibernate Panache</span></li>
+												<li class="list-inline-item"><span class="badge badge-primary badge-pill">Kafka</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">RedHat OpenShift Platform</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Istio Service Mesh</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Tekton</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Docker/Kubernetes</span></li>
+											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">PostgresSQL</span></li>
 										    </ul>
 									    </div><!--//resume-timeline-item-desc-->
-
 								    </article><!--//resume-timeline-item-->
-								    
-								    <article class="resume-timeline-item position-relative pb-5">
-									    
-									    <div class="resume-timeline-item-header mb-2">
-										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Co-Founder & Lead Developer</h3>
-										        <div class="resume-company-name ml-auto">To-do Lists</div>
-										    </div><!--//row-->
-										    <div class="resume-position-time">2012 - 2014</div>
-									    </div><!--//resume-timeline-item-header-->
-									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec.</p>
-										    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Django</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">JavaScript</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Node.js</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Require.js</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML/SASS</span></li>
-										    </ul>
-									    </div><!--//resume-timeline-item-desc-->
-
-								    </article><!--//resume-timeline-item-->
-								    
-								    <article class="resume-timeline-item position-relative">
-									    
-									    <div class="resume-timeline-item-header mb-2">
-										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1">Web Developer <small class="text-muted">(Intern)</small></h3>
-										        <div class="resume-company-name ml-auto">Amazon</div>
-										    </div><!--//row-->
-										    <div class="resume-position-time">2011 - 2012</div>
-									    </div><!--//resume-timeline-item-header-->
-									    <div class="resume-timeline-item-desc">
-										    <p>Role description goes here ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum.</p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-										    <ul class="list-inline">
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">Ruby on Rails</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">jQuery</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">HTML/LESS</span></li>
-											    <li class="list-inline-item"><span class="badge badge-primary badge-pill">MongoDB</span></li>
-										    </ul>
-									    </div><!--//resume-timeline-item-desc-->
-
-								    </article><!--//resume-timeline-item-->
-								    
-								    
 							    </div><!--//resume-timeline-->
 							    
 							    
@@ -228,21 +172,27 @@ title: Kunal Patil- About Me
 						            <h4 class="resume-skills-cat font-weight-bold">Backend</h4>
 							        <ul class="list-unstyled">
 										<li class="mb-2">
-								            <div class="resume-skill-name">SpringBoot</div>
+								            <div class="resume-skill-name">SpringBoot Framework</div>
 									        <div class="progress resume-progress">
-											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 										<li class="mb-2">
-								            <div class="resume-skill-name">Quarkus</div>
+								            <div class="resume-skill-name">Quarkus Framework</div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 60%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 								        <li class="mb-2">
-								            <div class="resume-skill-name">Java</div>
+								            <div class="resume-skill-name">Java/J2EE</div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+											</div>
+								        </li>
+										<li class="mb-2">
+								            <div class="resume-skill-name">Node.js</div>
+									        <div class="progress resume-progress">
+											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
 							        </ul>
@@ -258,7 +208,7 @@ title: Kunal Patil- About Me
 											</div>
 								        </li>
 										<li class="mb-2">
-								            <div class="resume-skill-name">Event Driven: RabbitMQ, AWS SQS, Confluent Kafka</div>
+								            <div class="resume-skill-name">Messaging: RabbitMQ, AWS SQS, Confluent Kafka</div>
 									        <div class="progress resume-progress">
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 70%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
